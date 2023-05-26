@@ -9,9 +9,9 @@ namespace TPIDSI.Modelos
     public class InformacionCliente
     {
         string datoAValidar { get; set; }
-        public InformacionCliente(string dato)
+        Validacion validacion { get; set; }
+        public InformacionCliente(string dato, Validacion validacion)
         {
             this.datoAValidar = dato;
-        }
-    }
+            this.validacion = validacion;
 }

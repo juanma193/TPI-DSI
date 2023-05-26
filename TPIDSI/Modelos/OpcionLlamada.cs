@@ -10,16 +10,17 @@ namespace TPIDSI.Modelos
     {
         string audioMensajeLlamada { get; set; }
         string mensajeSubOpciones { get; set; }
-        string nombre { get; set; } 
+        string nombre { get; set; }
         int nroOrden { get; set; }
-
+        List<Validacion> validacionesRequeridas { get; set; }
         List<SubOpcionLlamada> subOpcionLlamada { get; set; }
-        public OpcionLlamada (string audio, string mensaje, string nombre, int nroOrden, List<SubOpcionLlamada> subOpcion) 
+        public OpcionLlamada(string audio, string mensaje, string nombre, int nroOrden, List<Validacion> validaciones, List<SubOpcionLlamada> subOpcion)
         {
             this.audioMensajeLlamada = audio;
             this.mensajeSubOpciones = mensaje;
             this.nombre = nombre;
             this.nroOrden = nroOrden;
+            this.validacionesRequeridas = validaciones;
             this.subOpcionLlamada = subOpcion;
         }
     }

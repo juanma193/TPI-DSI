@@ -10,11 +10,12 @@ namespace TPIDSI.Modelos
     {
         string nombre { get; set; }
         int nroOrden { get; set; }
-
-        public SubOpcionLlamada(string nombre, int nroOrden)
+        List<Validacion> validacionRequerida { get; set; }
+        public SubOpcionLlamada(string nombre, int nroOrden,List<Validacion> validaciones)
         {
             this.nombre = nombre;
             this.nroOrden = nroOrden;
+            this.validacionRequerida = validaciones;
         }
     }
 }
