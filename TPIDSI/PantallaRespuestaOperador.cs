@@ -50,8 +50,9 @@ namespace TPIDSI
                 cmbOpciones.Items.Add(descripcion);
             }
 
+            btnValidar.Click += tomarRespuesta;
             //await tomarRespuesta(sender, e);
-            
+
         }
 
         private void tomarRespuesta(object sender, EventArgs e)

@@ -14,4 +14,6 @@ namespace TPIDSI.Modelos
         {
             this.datoAValidar = dato;
             this.validacion = validacion;
+        }
+    }
 }

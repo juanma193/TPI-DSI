@@ -28,7 +28,7 @@ namespace TPIDSI.Modelos
         internal List<string> getDescripcionOpciones()
         {
             List<string> descripcionOpciones = new List<string>();
-            foreach(OpcionValidacion opcion in opcionesVlaidacion) { descripcionOpciones.Add(opcion.getDescripcion()); }
+            foreach(OpcionValidacion opcion in BaseDeDatos.validacionList) { descripcionOpciones.Add(opcion.getDescripcion()); }
             return descripcionOpciones;
         }
 
