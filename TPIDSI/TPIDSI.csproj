@@ -48,18 +48,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDeDatos.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Modelos\OpcionValidacion.cs" />
+    <Compile Include="PantallaRespuestaOperador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="PantallaRespuestaOperador.Designer.cs">
+      <DependentUpon>PantallaRespuestaOperador.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Accion.cs" />
     <Compile Include="Modelos\CambioEstado.cs" />
     <Compile Include="Modelos\CategoriaLlamada.cs" />
     <Compile Include="Modelos\Cliente.cs" />
     <Compile Include="Modelos\Estado.cs" />
-    <Compile Include="GestorLlamada.cs" />
+    <Compile Include="GestorRespuestaOperador.cs" />
     <Compile Include="Modelos\InformacionCliente.cs" />
     <Compile Include="Modelos\Llamada.cs" />
     <Compile Include="Modelos\OpcionLlamada.cs" />
@@ -67,8 +68,8 @@
     <Compile Include="Modelos\Validacion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="PantallaRespuestaOperador.resx">
+      <DependentUpon>PantallaRespuestaOperador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

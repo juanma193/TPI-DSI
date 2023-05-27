@@ -17,8 +17,9 @@ namespace TPIDSI.Modelos
         Accion accionRequerida { get; set; }
         OpcionLlamada opcionSeleccionada { get; set; }
         SubOpcionLlamada subOpcionSeleccionada { get; set; }
+        List<CambioEstado> cambiosEstados { get; set; }
 
-        public Llamada(string descripcionOp, string detalleAccion, int duracion, bool encuesta, string observacion, Cliente cliente,Accion accion, OpcionLlamada opcion, SubOpcionLlamada subOpcionSeleccionada)
+        public Llamada(string descripcionOp, string detalleAccion, int duracion, bool encuesta, string observacion, Cliente cliente,Accion accion, OpcionLlamada opcion, SubOpcionLlamada subOpcionSeleccionada, List<CambioEstado> cambiosEstados)
         {
             this.descripcionOperador = descripcionOp;
             this.detalleAccionRequerida = detalleAccion;
@@ -29,6 +30,17 @@ namespace TPIDSI.Modelos
             this.accionRequerida = accion;
             this.opcionSeleccionada = opcion;
             this.subOpcionSeleccionada = subOpcionSeleccionada;
+            this.cambiosEstados = cambiosEstados;
+        }
+
+        internal string getNombreClienteDeLlamada()
+        {
+            return cliente.getNombre();
+        }
+
+        internal void actualizarEstado(Estado estadoEnCurso, DateTime dateTime)
+        {
+            cambiosEstados.Add(new CambioEstado(dateTime, estadoEnCurso));
         }
     }
 }

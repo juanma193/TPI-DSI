@@ -23,5 +23,10 @@ namespace TPIDSI.Modelos
             this.validacionesRequeridas = validaciones;
             this.subOpcionLlamada = subOpcion;
         }
+
+        internal string getNombre()
+        {
+            return this.nombre;
+        }
     }
 }

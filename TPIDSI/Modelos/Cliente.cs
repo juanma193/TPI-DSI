@@ -19,5 +19,10 @@ namespace TPIDSI.Modelos
             this.nroCelular = celular;
             this.info = info;
         }
+
+        internal string getNombre()
+        {
+            return nombreCompleto;
+        }
     }
 }

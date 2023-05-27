@@ -13,5 +13,9 @@ namespace TPIDSI.Modelos
         {
             this.nombre = nombre;
         }
+        public bool esEnCurso()
+        {
+            return nombre == "En curso";
+        }
     }
 }

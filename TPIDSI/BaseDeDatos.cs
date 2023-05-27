@@ -24,9 +24,9 @@ namespace TPIDSI
         public static List<CambioEstado> cambiosEstados = new List<CambioEstado> { cambio1 };
 
         //Creamos validaciones
-        public static Validacion validacion1 = new Validacion("validacion1","hola", 1);
-        public static Validacion validacion2 = new Validacion("validacion2","estamos", 2);
-        public static Validacion validacion3 = new Validacion("validacion3","listos", 3);
+        public static Validacion validacion1 = new Validacion("validacion1","hola", 1, validacionList);
+        public static Validacion validacion2 = new Validacion("validacion2","estamos", 2, validacionList);
+        public static Validacion validacion3 = new Validacion("validacion3","listos", 3, validacionList);
         public static List<Validacion> listaValidacion = new List<Validacion>() { validacion1, validacion2, validacion3 };
 
         //Creamos informacion del cliente
@@ -48,11 +48,19 @@ namespace TPIDSI
 
         //Creacion opcionLlamada
         public static OpcionLlamada opcionLlamada = new OpcionLlamada("Hola", "como estas", "Camila", 1, listaValidacion, subOpciones);
+        public static List<OpcionLlamada> opcionesLLamada = new List<OpcionLlamada>() { opcionLlamada };
 
 
         //Creamos la llamada
-        public static Llamada llamadaIniciada = new Llamada("Descripcion de opcion", "Detalle de Accion", 20, true, "nada", cliente1, accion1, opcionLlamada, subOpcion1);
+        public static Llamada llamadaIniciada = new Llamada("Descripcion de opcion", "Detalle de Accion", 20, true, "nada", cliente1, accion1, opcionLlamada, subOpcion1, cambiosEstados);
 
+        //Creacion categoria
+        public static CategoriaLlamada categoriaLlamada = new CategoriaLlamada("audio mensaje opciones", "mensaje opciones", "nombre", 1, opcionesLLamada);
 
+        //Creacion OpcionesValidacion
+        public static OpcionValidacion opcionValidacion1 = new OpcionValidacion("opcion 1", true);
+        public static OpcionValidacion opcionValidacion2 = new OpcionValidacion("opcion 2", false);
+        public static OpcionValidacion opcionValidacion3 = new OpcionValidacion("opcion 3", false);
+        public static List<OpcionValidacion> validacionList = new List<OpcionValidacion>() { opcionValidacion1, opcionValidacion2, opcionValidacion3 };
     }
 }

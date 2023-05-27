@@ -17,5 +17,12 @@ namespace TPIDSI.Modelos
             this.nroOrden = nroOrden;
             this.validacionRequerida = validaciones;
         }
+
+        internal List<Validacion> getValidaciones() { return validacionRequerida; }
+
+        internal string getNombre()
+        {
+            return nombre;
+        }
     }
 }

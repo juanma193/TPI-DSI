@@ -13,5 +13,18 @@ namespace TPIDSI.Modelos
         string nombre { get; set; }
         int nroOrden { get; set; }
         List<OpcionLlamada> opcion { get; set; }
+        public CategoriaLlamada(string audioMensajeOpciones, string mensajeOpciones, string nombre, int nroOrden, List<OpcionLlamada> opcion)
+        {
+            this.audioMensajeOpciones = audioMensajeOpciones;
+            this.mensajeOpciones = mensajeOpciones;
+            this.nombre = nombre;
+            this.nroOrden = nroOrden;
+            this.opcion = opcion;
+        }
+
+        internal string getNombre()
+        {
+            return this.nombre;
+        }
     }
 }
