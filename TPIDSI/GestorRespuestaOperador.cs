@@ -51,13 +51,13 @@ namespace TPIDSI
 
         internal static void tomarRespuestaOpcion(string descripcionSeleccionada)
         {
-            if (validaciones[indiceValidacion-1].validarOpcion(descripcionSeleccionada))
+            if (validaciones[indiceValidacion].validarOpcion(descripcionSeleccionada))
             {
-                
+                indiceValidacion++;
             }
             else
             {
-                validacionesCorrectas = false;
+                pantalla.OpcionIncorrecta();
             }
         }
 
@@ -87,7 +87,7 @@ namespace TPIDSI
                 pantalla.mostrarMensajeValidacion(mensajeVal);
                 descripcionOpciones = v.getDescripcionOpciones();
                 pantalla.mostrarOpciones(descripcionOpciones);
-                indiceValidacion++;
+                
             }
             else
             {
@@ -116,7 +116,7 @@ namespace TPIDSI
             finalizarLlamada();
         }
 
-        private void finalizarLlamada()
+        public void finalizarLlamada()
         {
             actualLlamada.setOpcion(opcionSeleccionada);
             actualLlamada.setSubOpcion(subOpcionLlamada);

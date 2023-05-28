@@ -75,11 +75,17 @@ namespace TPIDSI
         internal void mostrarAcciones(List<string> descripcionesAccion)
         {
             gbDescripcionOperador.Enabled = false;
+            cmbAcciones.Items.Clear();
             foreach (string descripcion in descripcionesAccion)
             {
                 cmbAcciones.Items.Add(descripcion);
             }
             gbAcciones.Enabled = true;
+        }
+
+        internal void OpcionIncorrecta()
+        {
+            MessageBox.Show("Opcion incorrecta.");
         }
 
         private void tomarAccionSeleccionada(object sender, EventArgs e)
@@ -94,6 +100,7 @@ namespace TPIDSI
         {
             gbConfirmacion.Enabled = false;
             gbDescripcionOperador.Enabled = true;
+            cmbAcciones.Text = "";
         }
 
         private void tomarConfirmacion(object sender, EventArgs e)
@@ -104,6 +111,12 @@ namespace TPIDSI
         internal void informarSituacion()
         {
             MessageBox.Show("Se registro la accion con exito.");
+        }
+
+        private void btnFinLlamada_Click(object sender, EventArgs e)
+        {
+            gestor.finalizarLlamada();
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

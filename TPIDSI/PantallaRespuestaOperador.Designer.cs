@@ -57,6 +57,7 @@ namespace TPIDSI
             this.btnAceptarConfirmacion = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btnRechazarConfirmacion = new System.Windows.Forms.Button();
+            this.btnFinLlamada = new System.Windows.Forms.Button();
             this.gbInfoCliente.SuspendLayout();
             this.gbInfoValidacion.SuspendLayout();
             this.gbDescripcionOperador.SuspendLayout();
@@ -115,7 +116,7 @@ namespace TPIDSI
             this.gbInfoCliente.Controls.Add(this.label3);
             this.gbInfoCliente.Controls.Add(this.label4);
             this.gbInfoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbInfoCliente.Location = new System.Drawing.Point(12, 12);
+            this.gbInfoCliente.Location = new System.Drawing.Point(6, 12);
             this.gbInfoCliente.Name = "gbInfoCliente";
             this.gbInfoCliente.Size = new System.Drawing.Size(477, 115);
             this.gbInfoCliente.TabIndex = 5;
@@ -179,9 +180,9 @@ namespace TPIDSI
             this.gbInfoValidacion.Controls.Add(this.lblMensajeValidacion);
             this.gbInfoValidacion.Controls.Add(this.label1);
             this.gbInfoValidacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbInfoValidacion.Location = new System.Drawing.Point(544, 222);
+            this.gbInfoValidacion.Location = new System.Drawing.Point(6, 133);
             this.gbInfoValidacion.Name = "gbInfoValidacion";
-            this.gbInfoValidacion.Size = new System.Drawing.Size(474, 163);
+            this.gbInfoValidacion.Size = new System.Drawing.Size(477, 163);
             this.gbInfoValidacion.TabIndex = 6;
             this.gbInfoValidacion.TabStop = false;
             this.gbInfoValidacion.Text = "Informacion Validacion";
@@ -251,7 +252,7 @@ namespace TPIDSI
             this.gbDescripcionOperador.Controls.Add(this.txtDescripcionOperador);
             this.gbDescripcionOperador.Controls.Add(this.label11);
             this.gbDescripcionOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDescripcionOperador.Location = new System.Drawing.Point(547, 12);
+            this.gbDescripcionOperador.Location = new System.Drawing.Point(6, 12);
             this.gbDescripcionOperador.Name = "gbDescripcionOperador";
             this.gbDescripcionOperador.Size = new System.Drawing.Size(477, 204);
             this.gbDescripcionOperador.TabIndex = 9;
@@ -296,7 +297,7 @@ namespace TPIDSI
             this.gbAcciones.Controls.Add(this.label6);
             this.gbAcciones.Enabled = false;
             this.gbAcciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbAcciones.Location = new System.Drawing.Point(12, 219);
+            this.gbAcciones.Location = new System.Drawing.Point(6, 222);
             this.gbAcciones.Name = "gbAcciones";
             this.gbAcciones.Size = new System.Drawing.Size(477, 85);
             this.gbAcciones.TabIndex = 10;
@@ -339,7 +340,7 @@ namespace TPIDSI
             this.gbConfirmacion.Controls.Add(this.label8);
             this.gbConfirmacion.Controls.Add(this.btnRechazarConfirmacion);
             this.gbConfirmacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbConfirmacion.Location = new System.Drawing.Point(12, 302);
+            this.gbConfirmacion.Location = new System.Drawing.Point(6, 313);
             this.gbConfirmacion.Name = "gbConfirmacion";
             this.gbConfirmacion.Size = new System.Drawing.Size(477, 65);
             this.gbConfirmacion.TabIndex = 11;
@@ -350,7 +351,7 @@ namespace TPIDSI
             // btnAceptarConfirmacion
             // 
             this.btnAceptarConfirmacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptarConfirmacion.Location = new System.Drawing.Point(364, 17);
+            this.btnAceptarConfirmacion.Location = new System.Drawing.Point(377, 17);
             this.btnAceptarConfirmacion.Name = "btnAceptarConfirmacion";
             this.btnAceptarConfirmacion.Size = new System.Drawing.Size(94, 37);
             this.btnAceptarConfirmacion.TabIndex = 9;
@@ -371,7 +372,7 @@ namespace TPIDSI
             // btnRechazarConfirmacion
             // 
             this.btnRechazarConfirmacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRechazarConfirmacion.Location = new System.Drawing.Point(252, 17);
+            this.btnRechazarConfirmacion.Location = new System.Drawing.Point(277, 17);
             this.btnRechazarConfirmacion.Name = "btnRechazarConfirmacion";
             this.btnRechazarConfirmacion.Size = new System.Drawing.Size(94, 37);
             this.btnRechazarConfirmacion.TabIndex = 7;
@@ -379,16 +380,30 @@ namespace TPIDSI
             this.btnRechazarConfirmacion.UseVisualStyleBackColor = true;
             this.btnRechazarConfirmacion.Click += new System.EventHandler(this.btnRechazarConfirmacion_Click);
             // 
+            // btnFinLlamada
+            // 
+            this.btnFinLlamada.BackColor = System.Drawing.Color.LightCoral;
+            this.btnFinLlamada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinLlamada.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnFinLlamada.Location = new System.Drawing.Point(283, 384);
+            this.btnFinLlamada.Name = "btnFinLlamada";
+            this.btnFinLlamada.Size = new System.Drawing.Size(194, 37);
+            this.btnFinLlamada.TabIndex = 12;
+            this.btnFinLlamada.Text = "Finalizar Llamada";
+            this.btnFinLlamada.UseVisualStyleBackColor = false;
+            this.btnFinLlamada.Click += new System.EventHandler(this.btnFinLlamada_Click);
+            // 
             // PantallaRespuestaOperador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 496);
-            this.Controls.Add(this.gbConfirmacion);
+            this.ClientSize = new System.Drawing.Size(491, 429);
+            this.Controls.Add(this.btnFinLlamada);
             this.Controls.Add(this.gbInfoValidacion);
-            this.Controls.Add(this.gbDescripcionOperador);
+            this.Controls.Add(this.gbConfirmacion);
             this.Controls.Add(this.gbAcciones);
             this.Controls.Add(this.gbInfoCliente);
+            this.Controls.Add(this.gbDescripcionOperador);
             this.Name = "PantallaRespuestaOperador";
             this.Text = "PantallaRespuestaOperador";
             this.Load += new System.EventHandler(this.PantallaRespuestaOperador_Load);
@@ -436,6 +451,7 @@ namespace TPIDSI
         private System.Windows.Forms.Button btnAceptarConfirmacion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnRechazarConfirmacion;
+        private System.Windows.Forms.Button btnFinLlamada;
     }
 }
 
