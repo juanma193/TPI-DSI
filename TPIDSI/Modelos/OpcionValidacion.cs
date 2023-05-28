@@ -26,5 +26,10 @@ namespace TPIDSI.Modelos
         {
             return correcta;
         }
+
+        internal bool esTuDescripcion(string descripcionSeleccionada)
+        {
+            return descripcion == descripcionSeleccionada;
+        }
     }
 }

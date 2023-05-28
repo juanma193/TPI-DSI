@@ -36,7 +36,7 @@ namespace TPIDSI.Modelos
         {
             foreach (OpcionValidacion opcion in opcionesValidacion)
             {
-                if (opcion.getDescripcion() == descripcionSeleccionada)
+                if (opcion.esTuDescripcion(descripcionSeleccionada))
                 {
                     return opcion.esCorrecta();
                 }

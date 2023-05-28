@@ -179,7 +179,7 @@ namespace TPIDSI
             this.gbInfoValidacion.Controls.Add(this.lblMensajeValidacion);
             this.gbInfoValidacion.Controls.Add(this.label1);
             this.gbInfoValidacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbInfoValidacion.Location = new System.Drawing.Point(15, 133);
+            this.gbInfoValidacion.Location = new System.Drawing.Point(544, 222);
             this.gbInfoValidacion.Name = "gbInfoValidacion";
             this.gbInfoValidacion.Size = new System.Drawing.Size(474, 163);
             this.gbInfoValidacion.TabIndex = 6;
@@ -213,7 +213,7 @@ namespace TPIDSI
             this.btnValidar.TabIndex = 4;
             this.btnValidar.Text = "Validar";
             this.btnValidar.UseVisualStyleBackColor = true;
-            this.btnValidar.Click += new System.EventHandler(this.tomarRespuesta);
+            this.btnValidar.Click += new System.EventHandler(this.tomarRespuestaOpcion);
             // 
             // label7
             // 
@@ -251,7 +251,7 @@ namespace TPIDSI
             this.gbDescripcionOperador.Controls.Add(this.txtDescripcionOperador);
             this.gbDescripcionOperador.Controls.Add(this.label11);
             this.gbDescripcionOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDescripcionOperador.Location = new System.Drawing.Point(12, 12);
+            this.gbDescripcionOperador.Location = new System.Drawing.Point(547, 12);
             this.gbDescripcionOperador.Name = "gbDescripcionOperador";
             this.gbDescripcionOperador.Size = new System.Drawing.Size(477, 204);
             this.gbDescripcionOperador.TabIndex = 9;
@@ -383,7 +383,7 @@ namespace TPIDSI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 381);
+            this.ClientSize = new System.Drawing.Size(1036, 496);
             this.Controls.Add(this.gbConfirmacion);
             this.Controls.Add(this.gbInfoValidacion);
             this.Controls.Add(this.gbDescripcionOperador);

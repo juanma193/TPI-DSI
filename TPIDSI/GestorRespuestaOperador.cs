@@ -15,11 +15,12 @@ namespace TPIDSI
         private static string nombreCliente { get; set; }
         private static string nombreCategoria { get; set; }
         private static string nombreOpcion { get; set; }
+        private static string nombreSubOpcion { get; set; }
         private static OpcionLlamada opcionSeleccionada { get; set; }
         private static SubOpcionLlamada subOpcionLlamada { get; set; }
-        private static string nombreSubOpcion { get; set; }
         private static List<Validacion> validaciones { get; set;}
         private static PantallaRespuestaOperador pantalla { get; set; }
+        private static string descripcionAccionSeleccionada { get; set;}
         private static List<string> descripcionOpciones { get; set; }
         private static int indiceValidacion = 0;
         private static bool validacionesCorrectas = true;
@@ -48,7 +49,7 @@ namespace TPIDSI
 
         }
 
-        internal static void tomarRespuesta(string descripcionSeleccionada)
+        internal static void tomarRespuestaOpcion(string descripcionSeleccionada)
         {
             if (validaciones[indiceValidacion-1].validarOpcion(descripcionSeleccionada))
             {
@@ -98,12 +99,17 @@ namespace TPIDSI
             }
         }
 
-        internal void tomarAccionSeleccionada(string descripcionAccion)
+        internal void tomarConfirmacion()
         {
-            registrarAccionRequerida(descripcionAccion);
+            registrarAccionRequerida();
         }
 
-        private void registrarAccionRequerida(string decripcionAccion)
+        internal void tomarAccionSeleccionada(string descripcionAccion)
+        {
+            descripcionAccionSeleccionada = descripcionAccion;
+        }
+
+        private void registrarAccionRequerida()
         {
             //llamar CU 28. Registrar Accion Requerida
             pantalla.informarSituacion();

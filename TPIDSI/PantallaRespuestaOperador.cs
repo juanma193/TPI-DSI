@@ -53,9 +53,9 @@ namespace TPIDSI
             }
         }
 
-        private void tomarRespuesta(object sender, EventArgs e)
+        private void tomarRespuestaOpcion(object sender, EventArgs e)
         {
-            GestorRespuestaOperador.tomarRespuesta(cmbOpciones.SelectedItem.ToString());
+            GestorRespuestaOperador.tomarRespuestaOpcion(cmbOpciones.SelectedItem.ToString());
             gestor.realizarValidaciones();
         }
 
@@ -87,6 +87,7 @@ namespace TPIDSI
             gbConfirmacion.Visible = true;
             gbConfirmacion.Enabled = true;
             gbAcciones.Enabled = false;
+            gestor.tomarAccionSeleccionada(cmbAcciones.Text);
         }
 
         private void btnRechazarConfirmacion_Click(object sender, EventArgs e)
@@ -97,7 +98,7 @@ namespace TPIDSI
 
         private void tomarConfirmacion(object sender, EventArgs e)
         {
-            gestor.tomarAccionSeleccionada(cmbAcciones.Text);
+            gestor.tomarConfirmacion();
         }
 
         internal void informarSituacion()
