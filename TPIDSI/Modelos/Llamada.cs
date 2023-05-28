@@ -10,7 +10,7 @@ namespace TPIDSI.Modelos
     {
         string descripcionOperador { get; set; }
         string detalleAccionRequerida { get; set; }
-        int duracion { get; set; }
+        double duracion { get; set; }
         bool encuestaEnviada { get; set; }
         string observacionAuditor { get; set; }
         Cliente cliente { get; set; }
@@ -19,7 +19,7 @@ namespace TPIDSI.Modelos
         SubOpcionLlamada subOpcionSeleccionada { get; set; }
         List<CambioEstado> cambiosEstados { get; set; }
 
-        public Llamada(string descripcionOp, string detalleAccion, int duracion, bool encuesta, string observacion, Cliente cliente,Accion accion, OpcionLlamada opcion, SubOpcionLlamada subOpcionSeleccionada, List<CambioEstado> cambiosEstados)
+        public Llamada(string descripcionOp, string detalleAccion, double duracion, bool encuesta, string observacion, Cliente cliente,Accion accion, OpcionLlamada opcion, SubOpcionLlamada subOpcionSeleccionada, List<CambioEstado> cambiosEstados)
         {
             this.descripcionOperador = descripcionOp;
             this.detalleAccionRequerida = detalleAccion;
@@ -38,9 +38,42 @@ namespace TPIDSI.Modelos
             return cliente.getNombre();
         }
 
-        internal void actualizarEstado(Estado estadoEnCurso, DateTime dateTime)
+        internal void actualizarEstado(Estado estado, DateTime dateTime)
         {
-            cambiosEstados.Add(new CambioEstado(dateTime, estadoEnCurso));
+            cambiosEstados.Add(new CambioEstado(dateTime, estado));
+        }
+
+        internal void setOpcion(OpcionLlamada opcionLlamada)
+        {
+            opcionSeleccionada = opcionLlamada;
+        }
+
+        internal void setSubOpcion(SubOpcionLlamada subOpcionLlamada)
+        {
+            subOpcionSeleccionada = subOpcionLlamada;
+        }
+
+        internal void setDescripcionOperador(string descripcionOperador)
+        {
+            this.descripcionOperador = descripcionOperador;
+        }
+
+        internal void setDuracion(double duracion)
+        {
+            this.duracion = duracion;
+        }
+
+        internal DateTime obtenerFechaHoraInicio()
+        {
+            DateTime fecha = DateTime.Now;
+            foreach (CambioEstado ce in cambiosEstados)
+            {
+                if(ce.getFechaHoraInicio() < fecha)
+                {
+                    fecha = ce.getFechaHoraInicio();
+                }
+            }
+            return fecha;
         }
     }
 }

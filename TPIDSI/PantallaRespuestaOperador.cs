@@ -17,11 +17,12 @@ namespace TPIDSI
         {
             InitializeComponent();
         }
+        private static GestorRespuestaOperador gestor = new GestorRespuestaOperador();
 
         private void PantallaRespuestaOperador_Load(object sender, EventArgs e)
         {
             this.Hide();
-            GestorRespuestaOperador.seleccionComunicarseConOperador(llamadaIniciada, categoriaLlamada, opcionLlamada, subOpcion1, this);
+            gestor.seleccionComunicarseConOperador(llamadaIniciada, categoriaLlamada, opcionLlamada, subOpcion1, this);
         }
 
         internal void habilitarPantalla()
@@ -42,22 +43,66 @@ namespace TPIDSI
             lblMensajeValidacion.Text = mensajeVal;
         }
 
-        internal async void mostrarOpciones(List<string> descripcionOpciones)
+        internal void mostrarOpciones(List<string> descripcionOpciones)
         {
             cmbOpciones.Items.Clear();
+            cmbOpciones.Text = "";
             foreach (string descripcion in descripcionOpciones)
             {
                 cmbOpciones.Items.Add(descripcion);
             }
-
-            btnValidar.Click += tomarRespuesta;
-            //await tomarRespuesta(sender, e);
-
         }
 
         private void tomarRespuesta(object sender, EventArgs e)
         {
-            GestorRespuestaOperador.tomarRespuesta(cmbOpciones.SelectedText);
+            GestorRespuestaOperador.tomarRespuesta(cmbOpciones.SelectedItem.ToString());
+            gestor.realizarValidaciones();
+        }
+
+        internal void solicitarDescripcionRespuesta()
+        {
+            gbDescripcionOperador.Visible = true;
+            gbAcciones.Visible = true;
+            gbInfoCliente.Visible = false;
+            gbInfoValidacion.Visible = false;
+        }
+
+        private void tomarDescripcionRespuesta(object sender, EventArgs e)
+        {
+            gestor.tomarDescripcionRespuesta(txtDescripcionOperador.Text);
+        }
+
+        internal void mostrarAcciones(List<string> descripcionesAccion)
+        {
+            gbDescripcionOperador.Enabled = false;
+            foreach (string descripcion in descripcionesAccion)
+            {
+                cmbAcciones.Items.Add(descripcion);
+            }
+            gbAcciones.Enabled = true;
+        }
+
+        private void tomarAccionSeleccionada(object sender, EventArgs e)
+        {
+            gbConfirmacion.Visible = true;
+            gbConfirmacion.Enabled = true;
+            gbAcciones.Enabled = false;
+        }
+
+        private void btnRechazarConfirmacion_Click(object sender, EventArgs e)
+        {
+            gbConfirmacion.Enabled = false;
+            gbDescripcionOperador.Enabled = true;
+        }
+
+        private void tomarConfirmacion(object sender, EventArgs e)
+        {
+            gestor.tomarAccionSeleccionada(cmbAcciones.Text);
+        }
+
+        internal void informarSituacion()
+        {
+            MessageBox.Show("Se registro la accion con exito.");
         }
     }
 }

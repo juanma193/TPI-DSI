@@ -13,5 +13,10 @@ namespace TPIDSI.Modelos
         {
             this.descripcion = descripcion;
         }
+
+        internal string getDescripcion()
+        {
+            return descripcion;
+        }
     }
 }

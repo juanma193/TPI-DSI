@@ -17,5 +17,10 @@ namespace TPIDSI.Modelos
         {
             return nombre == "En curso";
         }
+
+        internal bool esFinalizada()
+        {
+            return nombre == "Finalizada";
+        }
     }
 }

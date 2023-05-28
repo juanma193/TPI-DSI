@@ -14,6 +14,11 @@ namespace TPIDSI.Modelos
         {
             this.fechaHoraInicio = fechaInicio;
             this.estado = estado;
-        }   
+        }
+
+        internal DateTime getFechaHoraInicio()
+        {
+            return fechaHoraInicio;
+        }
     }
 }

@@ -17,11 +17,22 @@ namespace TPIDSI
         public static Estado[] estados = { estado1, estado2, estado3 };
 
         //Creamos accion
-        public static Accion accion1 = new Accion("Se movio 2 pasos");
+        public static Accion accion1 = new Accion("Dar de baja a la tarjeta");
+        public static Accion accion2 = new Accion("Mover 2 pasos");
+        public static Accion accion3 = new Accion("Ir al gimnasio");
+        public static Accion accion4 = new Accion("Aprobar directo diseño");
+        public static List<Accion> listaAcciones = new List<Accion>() { accion1, accion2, accion3, accion4};
+
 
         //Creamos cambios de estados
         public static CambioEstado cambio1 = new CambioEstado(new DateTime(2016, 03, 07), estado1);
         public static List<CambioEstado> cambiosEstados = new List<CambioEstado> { cambio1 };
+
+        //Creacion OpcionesValidacion
+        public static OpcionValidacion opcionValidacion1 = new OpcionValidacion("opcion 1", true);
+        public static OpcionValidacion opcionValidacion2 = new OpcionValidacion("opcion 2", false);
+        public static OpcionValidacion opcionValidacion3 = new OpcionValidacion("opcion 3", false);
+        public static List<OpcionValidacion> validacionList = new List<OpcionValidacion>() { opcionValidacion1, opcionValidacion2, opcionValidacion3 };
 
         //Creamos validaciones
         public static Validacion validacion1 = new Validacion("validacion1","hola", 1, validacionList);
@@ -52,15 +63,11 @@ namespace TPIDSI
 
 
         //Creamos la llamada
-        public static Llamada llamadaIniciada = new Llamada("Descripcion de opcion", "Detalle de Accion", 20, true, "nada", cliente1, accion1, opcionLlamada, subOpcion1, cambiosEstados);
+        public static Llamada llamadaIniciada = new Llamada("Descripcion de opcion", "Detalle de Accion", 0, true, "nada", cliente1, accion1, opcionLlamada, subOpcion1, cambiosEstados);
 
         //Creacion categoria
         public static CategoriaLlamada categoriaLlamada = new CategoriaLlamada("audio mensaje opciones", "mensaje opciones", "nombre", 1, opcionesLLamada);
 
-        //Creacion OpcionesValidacion
-        public static OpcionValidacion opcionValidacion1 = new OpcionValidacion("opcion 1", true);
-        public static OpcionValidacion opcionValidacion2 = new OpcionValidacion("opcion 2", false);
-        public static OpcionValidacion opcionValidacion3 = new OpcionValidacion("opcion 3", false);
-        public static List<OpcionValidacion> validacionList = new List<OpcionValidacion>() { opcionValidacion1, opcionValidacion2, opcionValidacion3 };
+        
     }
 }

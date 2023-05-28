@@ -15,11 +15,16 @@ namespace TPIDSI
         private static string nombreCliente { get; set; }
         private static string nombreCategoria { get; set; }
         private static string nombreOpcion { get; set; }
+        private static OpcionLlamada opcionSeleccionada { get; set; }
+        private static SubOpcionLlamada subOpcionLlamada { get; set; }
         private static string nombreSubOpcion { get; set; }
         private static List<Validacion> validaciones { get; set;}
         private static PantallaRespuestaOperador pantalla { get; set; }
         private static List<string> descripcionOpciones { get; set; }
+        private static int indiceValidacion = 0;
         private static bool validacionesCorrectas = true;
+        private static List<Accion> acciones = listaAcciones;
+        private static string descripcionOperador { get; set; }
 
 
         public static void obtenerLlamadaActual(Llamada llamada)
@@ -27,9 +32,11 @@ namespace TPIDSI
             actualLlamada = llamada;
         }
 
-        internal static void seleccionComunicarseConOperador(Llamada llamadaIniciada, CategoriaLlamada categoriaLlamada, OpcionLlamada opcionLlamada, SubOpcionLlamada subOpcion, PantallaRespuestaOperador pantallaRespuestaOperador)
+        public void seleccionComunicarseConOperador(Llamada llamadaIniciada, CategoriaLlamada categoriaLlamada, OpcionLlamada opcionLlamada, SubOpcionLlamada subOpcion, PantallaRespuestaOperador pantallaRespuestaOperador)
         {
             pantalla = pantallaRespuestaOperador;
+            subOpcionLlamada = subOpcion;
+            opcionSeleccionada = opcionLlamada;
             obtenerLlamadaActual(llamadaIniciada);
             estadoEnCurso = buscarEstadoEnCurso();
             actualizarEstadoLlamada();
@@ -43,7 +50,7 @@ namespace TPIDSI
 
         internal static void tomarRespuesta(string descripcionSeleccionada)
         {
-            if ( val.esOpcionCorrecta(descripcionSeleccionada))
+            if (validaciones[indiceValidacion-1].validarOpcion(descripcionSeleccionada))
             {
                 
             }
@@ -53,16 +60,93 @@ namespace TPIDSI
             }
         }
 
-        public static void realizarValidaciones()
+        internal void tomarDescripcionRespuesta(string text)
         {
-            foreach (Validacion v in validaciones)
+            descripcionOperador = text;
+            List<string> descripcionesAccion = buscarDescripcionAccion();
+            pantalla.mostrarAcciones(descripcionesAccion);
+        }
+
+        private List<string> buscarDescripcionAccion()
+        {
+            List<string> retorno = new List<string>();
+            foreach (Accion a in acciones)
             {
-                
+                retorno.Add(a.getDescripcion());
+            }
+            return retorno;
+        }
+
+        public void realizarValidaciones()
+        {
+            if (indiceValidacion < validaciones.Count)
+            {
+                Validacion v = validaciones[indiceValidacion];
                 string mensajeVal = v.getMensajeValidacion();
                 pantalla.mostrarMensajeValidacion(mensajeVal);
                 descripcionOpciones = v.getDescripcionOpciones();
                 pantalla.mostrarOpciones(descripcionOpciones);
+                indiceValidacion++;
             }
+            else
+            {
+                if (validacionesCorrectas)
+                {
+                    pantalla.solicitarDescripcionRespuesta();
+
+                }
+            }
+        }
+
+        internal void tomarAccionSeleccionada(string descripcionAccion)
+        {
+            registrarAccionRequerida(descripcionAccion);
+        }
+
+        private void registrarAccionRequerida(string decripcionAccion)
+        {
+            //llamar CU 28. Registrar Accion Requerida
+            pantalla.informarSituacion();
+            finalizarLlamada();
+        }
+
+        private void finalizarLlamada()
+        {
+            actualLlamada.setOpcion(opcionSeleccionada);
+            actualLlamada.setSubOpcion(subOpcionLlamada);
+            actualLlamada.setDescripcionOperador(descripcionOperador);
+            DateTime dateTime = DateTime.Now;
+            DateTime fechaHoraInicio = buscarFechaHoraInicio();
+            double duracion = calcularDuracion(dateTime, fechaHoraInicio);
+            actualLlamada.setDuracion(duracion);
+            Estado finalizada = buscarEstadoFinalizada();
+            actualLlamada.actualizarEstado(finalizada, dateTime);
+            int stop = 0;
+            //finCu();
+
+        }
+
+        private Estado buscarEstadoFinalizada()
+        {
+            foreach (Estado e in estados)
+            {
+                if (e.esFinalizada())
+                {
+                    return e;
+                }
+            }
+            return null;
+        }
+
+        private double calcularDuracion(DateTime dateTime, DateTime fechaHoraInicio)
+        {
+            TimeSpan ts = dateTime - fechaHoraInicio;
+            return ts.TotalMinutes;
+        }
+
+        private DateTime buscarFechaHoraInicio()
+        {
+            return actualLlamada.obtenerFechaHoraInicio();
         }
 
         private static void buscarVlaidacionesDeSubOpcion(SubOpcionLlamada subopcion)
@@ -96,6 +180,5 @@ namespace TPIDSI
             }
             return null;
         }
-        private static Validacion val { get; set; }
     }
 }

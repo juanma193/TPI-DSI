@@ -11,13 +11,13 @@ namespace TPIDSI.Modelos
         string audioMensajeValidacion { get;set; }
         string nombre { get; set; }
         int nroOrden { get; set; }
-        List<OpcionValidacion> opcionesVlaidacion { get; set; }
-        public Validacion(string audio, string nombre, int nroOrden, List<OpcionValidacion> opcionesVlaidacion)
+        List<OpcionValidacion> opcionesValidacion { get; set; }
+        public Validacion(string audio, string nombre, int nroOrden, List<OpcionValidacion> opcionesValidacion)
         {
             this.audioMensajeValidacion = audio;
             this.nombre = nombre;
             this.nroOrden = nroOrden;
-            this.opcionesVlaidacion = opcionesVlaidacion;
+            this.opcionesValidacion = opcionesValidacion;
         }
 
         internal string getMensajeValidacion()
@@ -28,15 +28,15 @@ namespace TPIDSI.Modelos
         internal List<string> getDescripcionOpciones()
         {
             List<string> descripcionOpciones = new List<string>();
-            foreach(OpcionValidacion opcion in BaseDeDatos.validacionList) { descripcionOpciones.Add(opcion.getDescripcion()); }
+            foreach(OpcionValidacion opcion in opcionesValidacion) { descripcionOpciones.Add(opcion.getDescripcion()); }
             return descripcionOpciones;
         }
 
-        internal bool esOpcionCorrecta(string descripcionSeleccionada)
+        internal bool validarOpcion(string descripcionSeleccionada)
         {
-            foreach (OpcionValidacion opcion in opcionesVlaidacion)
+            foreach (OpcionValidacion opcion in opcionesValidacion)
             {
-                if (opcion.getDescripcion().Equals(descripcionSeleccionada))
+                if (opcion.getDescripcion() == descripcionSeleccionada)
                 {
                     return opcion.esCorrecta();
                 }
