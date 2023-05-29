@@ -53,7 +53,7 @@ namespace TPIDSI
         public static Cliente cliente1 = new Cliente(45690486, "Hassan", 3512012116, listaInformacion);
 
         //Creacion SubOpciones
-        public static SubOpcionLlamada subOpcion1 = new SubOpcionLlamada("SubOpcion1", 1,listaValidacion);
+        public static SubOpcionLlamada subOpcion1 = new SubOpcionLlamada("SubOpcion 1", 1,listaValidacion);
         public static SubOpcionLlamada subOpcion2 = new SubOpcionLlamada("SubOpcion 2", 2, listaValidacion);
         public static List<SubOpcionLlamada> subOpciones = new List<SubOpcionLlamada>() { subOpcion1, subOpcion2 };
 

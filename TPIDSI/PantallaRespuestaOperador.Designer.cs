@@ -68,40 +68,40 @@ namespace TPIDSI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(17, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 20);
+            this.label2.Size = new System.Drawing.Size(145, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre del Cliente:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(17, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 20);
+            this.label3.Size = new System.Drawing.Size(78, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Categoria:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(17, 65);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 20);
+            this.label4.Size = new System.Drawing.Size(62, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Opcion:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(17, 85);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 20);
+            this.label5.Size = new System.Drawing.Size(92, 19);
             this.label5.TabIndex = 4;
             this.label5.Text = "Sub Opcion:";
             // 
@@ -115,7 +115,8 @@ namespace TPIDSI
             this.gbInfoCliente.Controls.Add(this.label5);
             this.gbInfoCliente.Controls.Add(this.label3);
             this.gbInfoCliente.Controls.Add(this.label4);
-            this.gbInfoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbInfoCliente.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbInfoCliente.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.gbInfoCliente.Location = new System.Drawing.Point(6, 12);
             this.gbInfoCliente.Name = "gbInfoCliente";
             this.gbInfoCliente.Size = new System.Drawing.Size(477, 115);
@@ -127,49 +128,50 @@ namespace TPIDSI
             // 
             this.lblNombreSubOpcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNombreSubOpcion.AutoSize = true;
-            this.lblNombreSubOpcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreSubOpcion.Location = new System.Drawing.Point(312, 85);
+            this.lblNombreSubOpcion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreSubOpcion.Location = new System.Drawing.Point(109, 85);
             this.lblNombreSubOpcion.Name = "lblNombreSubOpcion";
-            this.lblNombreSubOpcion.Size = new System.Drawing.Size(159, 20);
+            this.lblNombreSubOpcion.Size = new System.Drawing.Size(145, 19);
             this.lblNombreSubOpcion.TabIndex = 8;
             this.lblNombreSubOpcion.Text = "lblNombreSubOpcion";
-            this.lblNombreSubOpcion.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblNombreSubOpcion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblNombreOpcion
             // 
             this.lblNombreOpcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNombreOpcion.AutoSize = true;
-            this.lblNombreOpcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreOpcion.Location = new System.Drawing.Point(341, 65);
+            this.lblNombreOpcion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreOpcion.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblNombreOpcion.Location = new System.Drawing.Point(82, 66);
             this.lblNombreOpcion.Name = "lblNombreOpcion";
-            this.lblNombreOpcion.Size = new System.Drawing.Size(130, 20);
+            this.lblNombreOpcion.Size = new System.Drawing.Size(122, 19);
             this.lblNombreOpcion.TabIndex = 7;
             this.lblNombreOpcion.Text = "lblNombreOpcion";
-            this.lblNombreOpcion.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblNombreOpcion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblNombreCategoria
             // 
             this.lblNombreCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNombreCategoria.AutoSize = true;
-            this.lblNombreCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreCategoria.Location = new System.Drawing.Point(322, 45);
+            this.lblNombreCategoria.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreCategoria.Location = new System.Drawing.Point(98, 46);
             this.lblNombreCategoria.Name = "lblNombreCategoria";
-            this.lblNombreCategoria.Size = new System.Drawing.Size(149, 20);
+            this.lblNombreCategoria.Size = new System.Drawing.Size(139, 19);
             this.lblNombreCategoria.TabIndex = 6;
             this.lblNombreCategoria.Text = "lblNombreCategoria";
-            this.lblNombreCategoria.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblNombreCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblNombreCliente
             // 
             this.lblNombreCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreCliente.Location = new System.Drawing.Point(342, 25);
+            this.lblNombreCliente.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreCliente.Location = new System.Drawing.Point(161, 27);
             this.lblNombreCliente.Name = "lblNombreCliente";
-            this.lblNombreCliente.Size = new System.Drawing.Size(129, 20);
+            this.lblNombreCliente.Size = new System.Drawing.Size(122, 19);
             this.lblNombreCliente.TabIndex = 5;
             this.lblNombreCliente.Text = "lblNombreCliente";
-            this.lblNombreCliente.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblNombreCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gbInfoValidacion
             // 
@@ -179,8 +181,9 @@ namespace TPIDSI
             this.gbInfoValidacion.Controls.Add(this.label7);
             this.gbInfoValidacion.Controls.Add(this.lblMensajeValidacion);
             this.gbInfoValidacion.Controls.Add(this.label1);
-            this.gbInfoValidacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbInfoValidacion.Location = new System.Drawing.Point(6, 133);
+            this.gbInfoValidacion.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbInfoValidacion.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.gbInfoValidacion.Location = new System.Drawing.Point(6, 144);
             this.gbInfoValidacion.Name = "gbInfoValidacion";
             this.gbInfoValidacion.Size = new System.Drawing.Size(477, 163);
             this.gbInfoValidacion.TabIndex = 6;
@@ -189,60 +192,69 @@ namespace TPIDSI
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.BackColor = System.Drawing.Color.LightGray;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button1.Location = new System.Drawing.Point(274, 118);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 37);
             this.button1.TabIndex = 6;
             this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // cmbOpciones
             // 
+            this.cmbOpciones.Font = new System.Drawing.Font("Calibri", 12F);
             this.cmbOpciones.FormattingEnabled = true;
             this.cmbOpciones.Location = new System.Drawing.Point(102, 80);
             this.cmbOpciones.Name = "cmbOpciones";
-            this.cmbOpciones.Size = new System.Drawing.Size(366, 32);
+            this.cmbOpciones.Size = new System.Drawing.Size(366, 27);
             this.cmbOpciones.TabIndex = 5;
             // 
             // btnValidar
             // 
-            this.btnValidar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(167)))), ((int)(((byte)(208)))));
+            this.btnValidar.FlatAppearance.BorderSize = 0;
+            this.btnValidar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnValidar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnValidar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnValidar.Location = new System.Drawing.Point(374, 118);
             this.btnValidar.Name = "btnValidar";
             this.btnValidar.Size = new System.Drawing.Size(94, 37);
             this.btnValidar.TabIndex = 4;
             this.btnValidar.Text = "Validar";
-            this.btnValidar.UseVisualStyleBackColor = true;
+            this.btnValidar.UseVisualStyleBackColor = false;
             this.btnValidar.Click += new System.EventHandler(this.tomarRespuestaOpcion);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 86);
+            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(22, 83);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 20);
+            this.label7.Size = new System.Drawing.Size(74, 19);
             this.label7.TabIndex = 2;
             this.label7.Text = "Opciones:";
             // 
             // lblMensajeValidacion
             // 
             this.lblMensajeValidacion.AutoSize = true;
-            this.lblMensajeValidacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensajeValidacion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensajeValidacion.Location = new System.Drawing.Point(39, 50);
             this.lblMensajeValidacion.Name = "lblMensajeValidacion";
-            this.lblMensajeValidacion.Size = new System.Drawing.Size(157, 20);
+            this.lblMensajeValidacion.Size = new System.Drawing.Size(148, 19);
             this.lblMensajeValidacion.TabIndex = 1;
             this.lblMensajeValidacion.Text = "lblMensajeValidacion";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 20);
+            this.label1.Size = new System.Drawing.Size(146, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Validacion requerida:";
             // 
@@ -251,8 +263,9 @@ namespace TPIDSI
             this.gbDescripcionOperador.Controls.Add(this.btnCargarDescripcionOperador);
             this.gbDescripcionOperador.Controls.Add(this.txtDescripcionOperador);
             this.gbDescripcionOperador.Controls.Add(this.label11);
-            this.gbDescripcionOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDescripcionOperador.Location = new System.Drawing.Point(6, 12);
+            this.gbDescripcionOperador.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDescripcionOperador.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.gbDescripcionOperador.Location = new System.Drawing.Point(6, 22);
             this.gbDescripcionOperador.Name = "gbDescripcionOperador";
             this.gbDescripcionOperador.Size = new System.Drawing.Size(477, 204);
             this.gbDescripcionOperador.TabIndex = 9;
@@ -262,18 +275,21 @@ namespace TPIDSI
             // 
             // btnCargarDescripcionOperador
             // 
-            this.btnCargarDescripcionOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargarDescripcionOperador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(167)))), ((int)(((byte)(208)))));
+            this.btnCargarDescripcionOperador.FlatAppearance.BorderSize = 0;
+            this.btnCargarDescripcionOperador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargarDescripcionOperador.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargarDescripcionOperador.Location = new System.Drawing.Point(377, 156);
             this.btnCargarDescripcionOperador.Name = "btnCargarDescripcionOperador";
             this.btnCargarDescripcionOperador.Size = new System.Drawing.Size(94, 37);
             this.btnCargarDescripcionOperador.TabIndex = 7;
             this.btnCargarDescripcionOperador.Text = "Cargar";
-            this.btnCargarDescripcionOperador.UseVisualStyleBackColor = true;
+            this.btnCargarDescripcionOperador.UseVisualStyleBackColor = false;
             this.btnCargarDescripcionOperador.Click += new System.EventHandler(this.tomarDescripcionRespuesta);
             // 
             // txtDescripcionOperador
             // 
-            this.txtDescripcionOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcionOperador.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcionOperador.Location = new System.Drawing.Point(21, 48);
             this.txtDescripcionOperador.Name = "txtDescripcionOperador";
             this.txtDescripcionOperador.Size = new System.Drawing.Size(447, 102);
@@ -283,10 +299,10 @@ namespace TPIDSI
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(17, 25);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(167, 20);
+            this.label11.Size = new System.Drawing.Size(155, 19);
             this.label11.TabIndex = 1;
             this.label11.Text = "Ingrese la descripcion:";
             // 
@@ -296,8 +312,9 @@ namespace TPIDSI
             this.gbAcciones.Controls.Add(this.cmbAcciones);
             this.gbAcciones.Controls.Add(this.label6);
             this.gbAcciones.Enabled = false;
-            this.gbAcciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbAcciones.Location = new System.Drawing.Point(6, 222);
+            this.gbAcciones.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbAcciones.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.gbAcciones.Location = new System.Drawing.Point(6, 211);
             this.gbAcciones.Name = "gbAcciones";
             this.gbAcciones.Size = new System.Drawing.Size(477, 85);
             this.gbAcciones.TabIndex = 10;
@@ -307,30 +324,34 @@ namespace TPIDSI
             // 
             // btnSeleccionAccion
             // 
-            this.btnSeleccionAccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionAccion.Location = new System.Drawing.Point(377, 39);
+            this.btnSeleccionAccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(167)))), ((int)(((byte)(208)))));
+            this.btnSeleccionAccion.FlatAppearance.BorderSize = 0;
+            this.btnSeleccionAccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionAccion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionAccion.Location = new System.Drawing.Point(377, 38);
             this.btnSeleccionAccion.Name = "btnSeleccionAccion";
-            this.btnSeleccionAccion.Size = new System.Drawing.Size(94, 37);
+            this.btnSeleccionAccion.Size = new System.Drawing.Size(94, 31);
             this.btnSeleccionAccion.TabIndex = 7;
             this.btnSeleccionAccion.Text = "Aceptar";
-            this.btnSeleccionAccion.UseVisualStyleBackColor = true;
+            this.btnSeleccionAccion.UseVisualStyleBackColor = false;
             this.btnSeleccionAccion.Click += new System.EventHandler(this.tomarAccionSeleccionada);
             // 
             // cmbAcciones
             // 
+            this.cmbAcciones.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAcciones.FormattingEnabled = true;
             this.cmbAcciones.Location = new System.Drawing.Point(92, 41);
             this.cmbAcciones.Name = "cmbAcciones";
-            this.cmbAcciones.Size = new System.Drawing.Size(279, 32);
+            this.cmbAcciones.Size = new System.Drawing.Size(279, 27);
             this.cmbAcciones.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 47);
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(15, 44);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 20);
+            this.label6.Size = new System.Drawing.Size(71, 19);
             this.label6.TabIndex = 6;
             this.label6.Text = "Acciones:";
             // 
@@ -339,7 +360,8 @@ namespace TPIDSI
             this.gbConfirmacion.Controls.Add(this.btnAceptarConfirmacion);
             this.gbConfirmacion.Controls.Add(this.label8);
             this.gbConfirmacion.Controls.Add(this.btnRechazarConfirmacion);
-            this.gbConfirmacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbConfirmacion.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbConfirmacion.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.gbConfirmacion.Location = new System.Drawing.Point(6, 313);
             this.gbConfirmacion.Name = "gbConfirmacion";
             this.gbConfirmacion.Size = new System.Drawing.Size(477, 65);
@@ -350,42 +372,51 @@ namespace TPIDSI
             // 
             // btnAceptarConfirmacion
             // 
-            this.btnAceptarConfirmacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptarConfirmacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(167)))), ((int)(((byte)(208)))));
+            this.btnAceptarConfirmacion.FlatAppearance.BorderSize = 0;
+            this.btnAceptarConfirmacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptarConfirmacion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptarConfirmacion.Location = new System.Drawing.Point(377, 17);
             this.btnAceptarConfirmacion.Name = "btnAceptarConfirmacion";
             this.btnAceptarConfirmacion.Size = new System.Drawing.Size(94, 37);
             this.btnAceptarConfirmacion.TabIndex = 9;
             this.btnAceptarConfirmacion.Text = "Aceptar";
-            this.btnAceptarConfirmacion.UseVisualStyleBackColor = true;
+            this.btnAceptarConfirmacion.UseVisualStyleBackColor = false;
             this.btnAceptarConfirmacion.Click += new System.EventHandler(this.tomarConfirmacion);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(6, 25);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(229, 20);
+            this.label8.Size = new System.Drawing.Size(210, 19);
             this.label8.TabIndex = 8;
             this.label8.Text = "Confirmar operacion realizada?";
             // 
             // btnRechazarConfirmacion
             // 
-            this.btnRechazarConfirmacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRechazarConfirmacion.BackColor = System.Drawing.Color.LightGray;
+            this.btnRechazarConfirmacion.FlatAppearance.BorderSize = 0;
+            this.btnRechazarConfirmacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRechazarConfirmacion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRechazarConfirmacion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnRechazarConfirmacion.Location = new System.Drawing.Point(277, 17);
             this.btnRechazarConfirmacion.Name = "btnRechazarConfirmacion";
             this.btnRechazarConfirmacion.Size = new System.Drawing.Size(94, 37);
             this.btnRechazarConfirmacion.TabIndex = 7;
             this.btnRechazarConfirmacion.Text = "Rechazar";
-            this.btnRechazarConfirmacion.UseVisualStyleBackColor = true;
+            this.btnRechazarConfirmacion.UseVisualStyleBackColor = false;
             this.btnRechazarConfirmacion.Click += new System.EventHandler(this.btnRechazarConfirmacion_Click);
             // 
             // btnFinLlamada
             // 
-            this.btnFinLlamada.BackColor = System.Drawing.Color.LightCoral;
-            this.btnFinLlamada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinLlamada.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnFinLlamada.Location = new System.Drawing.Point(283, 384);
+            this.btnFinLlamada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(89)))), ((int)(((byte)(69)))));
+            this.btnFinLlamada.FlatAppearance.BorderSize = 0;
+            this.btnFinLlamada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinLlamada.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinLlamada.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnFinLlamada.Location = new System.Drawing.Point(289, 384);
             this.btnFinLlamada.Name = "btnFinLlamada";
             this.btnFinLlamada.Size = new System.Drawing.Size(194, 37);
             this.btnFinLlamada.TabIndex = 12;
@@ -397,7 +428,8 @@ namespace TPIDSI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 429);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(119)))), ((int)(((byte)(97)))));
+            this.ClientSize = new System.Drawing.Size(496, 429);
             this.Controls.Add(this.btnFinLlamada);
             this.Controls.Add(this.gbInfoValidacion);
             this.Controls.Add(this.gbConfirmacion);
@@ -405,6 +437,7 @@ namespace TPIDSI
             this.Controls.Add(this.gbInfoCliente);
             this.Controls.Add(this.gbDescripcionOperador);
             this.Name = "PantallaRespuestaOperador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PantallaRespuestaOperador";
             this.Load += new System.EventHandler(this.PantallaRespuestaOperador_Load);
             this.gbInfoCliente.ResumeLayout(false);
