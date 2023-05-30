@@ -206,6 +206,7 @@ namespace TPIDSI
             // 
             // cmbOpciones
             // 
+            this.cmbOpciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOpciones.Font = new System.Drawing.Font("Calibri", 12F);
             this.cmbOpciones.FormattingEnabled = true;
             this.cmbOpciones.Location = new System.Drawing.Point(102, 80);
@@ -338,6 +339,7 @@ namespace TPIDSI
             // 
             // cmbAcciones
             // 
+            this.cmbAcciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAcciones.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAcciones.FormattingEnabled = true;
             this.cmbAcciones.Location = new System.Drawing.Point(92, 41);
