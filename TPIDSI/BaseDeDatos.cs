@@ -20,7 +20,7 @@ namespace TPIDSI
         public static Accion accion1 = new Accion("Dar de baja a la tarjeta");
         public static Accion accion2 = new Accion("Pedir nueva tarjeta");
         public static Accion accion3 = new Accion("Pausar acciones de la tarjeta");
-        public static Accion accion4 = new Accion("Otros motivos");
+        public static Accion accion4 = new Accion("Pausar acciones y pedir nueva tarjeta");
         public static List<Accion> listaAcciones = new List<Accion>() { accion1, accion2, accion3, accion4};
 
 
@@ -29,15 +29,27 @@ namespace TPIDSI
         public static List<CambioEstado> cambiosEstados = new List<CambioEstado> { cambio1 };
 
         //Creacion OpcionesValidacion
-        public static OpcionValidacion opcionValidacion1 = new OpcionValidacion("opcion 1", true);
-        public static OpcionValidacion opcionValidacion2 = new OpcionValidacion("opcion 2", false);
-        public static OpcionValidacion opcionValidacion3 = new OpcionValidacion("opcion 3", false);
-        public static List<OpcionValidacion> validacionList = new List<OpcionValidacion>() { opcionValidacion1, opcionValidacion2, opcionValidacion3 };
+        public static OpcionValidacion opcionValidacion1 = new OpcionValidacion("27 de junio", true);
+        public static OpcionValidacion opcionValidacion2 = new OpcionValidacion("8 de enero", false);
+        public static OpcionValidacion opcionValidacion3 = new OpcionValidacion("22 de mayo", false);
+        public static List<OpcionValidacion> validacionList1 = new List<OpcionValidacion>() { opcionValidacion1, opcionValidacion2, opcionValidacion3 };
+
+        //Creacion OpcionesValidacion
+        public static OpcionValidacion opcionValidacion4 = new OpcionValidacion("0", false);
+        public static OpcionValidacion opcionValidacion5 = new OpcionValidacion("1", false);
+        public static OpcionValidacion opcionValidacion6 = new OpcionValidacion("2 o mas", true);
+        public static List<OpcionValidacion> validacionList2 = new List<OpcionValidacion>() { opcionValidacion4, opcionValidacion5, opcionValidacion6 };
+
+        //Creacion OpcionesValidacion
+        public static OpcionValidacion opcionValidacion7 = new OpcionValidacion("5003", false);
+        public static OpcionValidacion opcionValidacion8 = new OpcionValidacion("5021", true);
+        public static OpcionValidacion opcionValidacion9 = new OpcionValidacion("6000", false);
+        public static List<OpcionValidacion> validacionList3 = new List<OpcionValidacion>() { opcionValidacion7, opcionValidacion8, opcionValidacion9 };
 
         //Creamos validaciones
-        public static Validacion validacion1 = new Validacion("validacion 1","hola", 1, validacionList);
-        public static Validacion validacion2 = new Validacion("validacion 2","estamos", 2, validacionList);
-        public static Validacion validacion3 = new Validacion("validacion 3","listos", 3, validacionList);
+        public static Validacion validacion1 = new Validacion("Fecha nacimiento","Validacion de fecha nacimiento", 1, validacionList1);
+        public static Validacion validacion2 = new Validacion("Numero hijos","Validacion de numero de hijos", 2, validacionList2);
+        public static Validacion validacion3 = new Validacion("Codigo postal","Validacion de codigo postal", 3, validacionList3);
         public static List<Validacion> listaValidacion = new List<Validacion>() { validacion1, validacion2, validacion3 };
 
         //Creamos informacion del cliente

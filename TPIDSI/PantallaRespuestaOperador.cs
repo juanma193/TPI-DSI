@@ -107,6 +107,7 @@ namespace TPIDSI
         private void tomarConfirmacion(object sender, EventArgs e)
         {
             gestor.tomarConfirmacion();
+            System.Windows.Forms.Application.Exit();
         }
 
         internal void informarSituacion()

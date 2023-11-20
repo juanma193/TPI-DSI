@@ -10,6 +10,7 @@ namespace TPIDSI
 {
     public class GestorRespuestaOperador
     {
+        //Creacion de los atributos del gestor
         private static Llamada actualLlamada { get; set; }
         private static Estado estadoEnCurso { get; set; }
         private static string nombreCliente { get; set; }
@@ -28,11 +29,13 @@ namespace TPIDSI
         private static string descripcionOperador { get; set; }
 
 
+        //Metodo para obtener la llamada actual
         public static void obtenerLlamadaActual(Llamada llamada)
         {
             actualLlamada = llamada;
         }
 
+        //Obtenemos la pantalla del operador junto con los datos necesarios
         public void seleccionComunicarseConOperador(Llamada llamadaIniciada, CategoriaLlamada categoriaLlamada, OpcionLlamada opcionLlamada, SubOpcionLlamada subOpcion, PantallaRespuestaOperador pantallaRespuestaOperador)
         {
             pantalla = pantallaRespuestaOperador;
@@ -49,6 +52,7 @@ namespace TPIDSI
 
         }
 
+        //Se valida la respuesta del operador
         internal static void tomarRespuestaOpcion(string descripcionSeleccionada)
         {
             if (validaciones[indiceValidacion].validarOpcion(descripcionSeleccionada))
@@ -61,6 +65,7 @@ namespace TPIDSI
             }
         }
 
+        //Se guarda la descripcion escrita por el operador
         internal void tomarDescripcionRespuesta(string text)
         {
             descripcionOperador = text;
@@ -68,6 +73,7 @@ namespace TPIDSI
             pantalla.mostrarAcciones(descripcionesAccion);
         }
 
+        //Get la descripcion de las acciones
         private List<string> buscarDescripcionAccion()
         {
             List<string> retorno = new List<string>();
