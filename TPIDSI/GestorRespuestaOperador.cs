@@ -12,7 +12,6 @@ namespace TPIDSI
     {
         //Creacion de los atributos del gestor
         private static Llamada actualLlamada { get; set; }
-        private static Estado estadoEnCurso { get; set; }
         private static string nombreCliente { get; set; }
         private static string nombreCategoria { get; set; }
         private static string nombreOpcion { get; set; }
@@ -27,7 +26,7 @@ namespace TPIDSI
         private static bool validacionesCorrectas = true;
         private static List<Accion> acciones = listaAcciones;
         private static string descripcionOperador { get; set; }
-
+        private static EnCurso estadoEnCurso { get; set; } = null;
 
         //Metodo para obtener la llamada actual
         public static void obtenerLlamadaActual(Llamada llamada)
@@ -42,8 +41,7 @@ namespace TPIDSI
             subOpcionLlamada = subOpcion;
             opcionSeleccionada = opcionLlamada;
             obtenerLlamadaActual(llamadaIniciada);
-            estadoEnCurso = buscarEstadoEnCurso();
-            actualizarEstadoLlamada();
+            estadoEnCurso = actualizarEstadoLlamada();
             buscarDatosLlamada(categoriaLlamada, opcionLlamada, subOpcion);
             buscarVlaidacionesDeSubOpcion(subOpcion);
             pantalla.habilitarPantalla();
@@ -51,6 +49,7 @@ namespace TPIDSI
             realizarValidaciones();
 
         }
+
 
         //Se valida la respuesta del operador
         internal static void tomarRespuestaOpcion(string descripcionSeleccionada)
@@ -131,8 +130,7 @@ namespace TPIDSI
             DateTime fechaHoraInicio = buscarFechaHoraInicio();
             double duracion = calcularDuracion(dateTime, fechaHoraInicio);
             actualLlamada.setDuracion(duracion);
-            Estado finalizada = buscarEstadoFinalizada();
-            actualLlamada.actualizarEstado(finalizada, dateTime);
+            actualLlamada.finalizar(dateTime, estadoEnCurso);
             int stop = 0;
             //finCu();
 
@@ -175,10 +173,10 @@ namespace TPIDSI
 
         }
 
-        private static void actualizarEstadoLlamada()
+        private static EnCurso actualizarEstadoLlamada()
         {
             DateTime dateTime = DateTime.Now;
-            actualLlamada.actualizarEstado(estadoEnCurso, dateTime);
+            return actualLlamada.procesar(dateTime);
         }
 
         private static Estado buscarEstadoEnCurso()

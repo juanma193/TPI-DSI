@@ -17,7 +17,9 @@ namespace TPIDSI.Modelos
         Accion accionRequerida { get; set; }
         OpcionLlamada opcionSeleccionada { get; set; }
         SubOpcionLlamada subOpcionSeleccionada { get; set; }
-        List<CambioEstado> cambiosEstados { get; set; }
+        public List<CambioEstado> cambiosEstados { get; set; }
+        Iniciada estadoIniciada = new Iniciada(); 
+
 
         public Llamada(string descripcionOp, string detalleAccion, double duracion, bool encuesta, string observacion, Cliente cliente,Accion accion, OpcionLlamada opcion, SubOpcionLlamada subOpcionSeleccionada, List<CambioEstado> cambiosEstados)
         {
@@ -38,10 +40,12 @@ namespace TPIDSI.Modelos
             return cliente.getNombre();
         }
 
-        internal void actualizarEstado(Estado estado, DateTime dateTime)
+        internal EnCurso procesar(DateTime dateTime)
         {
-            cambiosEstados.Add(new CambioEstado(dateTime, estado));
+            return estadoIniciada.procesar(this, dateTime);
         }
+
+        
 
         internal void setOpcion(OpcionLlamada opcionLlamada)
         {
@@ -74,6 +78,11 @@ namespace TPIDSI.Modelos
                 }
             }
             return fecha;
+        }
+
+        internal void finalizar(DateTime dateTime,EnCurso estado)
+        {
+            estado.finalizar(this, dateTime);
         }
     }
 }

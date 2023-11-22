@@ -48,6 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDeDatos.cs" />
+    <Compile Include="Modelos\EnCurso.cs" />
+    <Compile Include="Modelos\Finalizada.cs" />
+    <Compile Include="Modelos\Iniciada.cs" />
     <Compile Include="Modelos\OpcionValidacion.cs" />
     <Compile Include="PantallaRespuestaOperador.cs">
       <SubType>Form</SubType>

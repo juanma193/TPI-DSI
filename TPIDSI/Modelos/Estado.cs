@@ -6,21 +6,19 @@ using System.Threading.Tasks;
 
 namespace TPIDSI.Modelos
 {
-    public class Estado
-    {
-        string nombre {  get; set; }
-        public Estado(string nombre)
+    public abstract class Estado
+    { 
+
+
+        public CambioEstado crearCambioEstado(Estado e, DateTime fecha)
         {
-            this.nombre = nombre;
-        }
-        public bool esEnCurso()
-        {
-            return nombre == "En curso";
+            return new CambioEstado(fecha, e);
         }
 
-        internal bool esFinalizada()
-        {
-            return nombre == "Finalizada";
-        }
+        public abstract bool esEnCurso();
+
+
+        public abstract bool esFinalizada();
+        
     }
 }

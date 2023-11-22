@@ -10,9 +10,9 @@ namespace TPIDSI
     public class BaseDeDatos
     {
         //Creamos los estados
-        public static Estado estado1 = new Estado("Iniciada");
-        public static Estado estado2 = new Estado("En curso");
-        public static Estado estado3 = new Estado("Finalizada");
+        public static Iniciada estado1 = new Iniciada();
+        public static EnCurso estado2 = new EnCurso();
+        public static Finalizada estado3 = new Finalizada();
 
         public static Estado[] estados = { estado1, estado2, estado3 };
 
