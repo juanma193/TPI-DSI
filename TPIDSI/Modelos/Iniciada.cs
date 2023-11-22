@@ -8,10 +8,6 @@ namespace TPIDSI.Modelos
 {
     public class Iniciada : Estado
     {
-        public override bool esEnCurso()
-        {
-            return false;
-        }
         public EnCurso procesar(Llamada llamada,DateTime fecha)
         {
             EnCurso enCurso = crearProximoEstado();
@@ -25,9 +21,5 @@ namespace TPIDSI.Modelos
             return new EnCurso();
         }
 
-        public override bool esFinalizada()
-        {
-            return false;
-        }
     }
 }

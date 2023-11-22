@@ -15,10 +15,21 @@ namespace TPIDSI.Modelos
             return new CambioEstado(fecha, e);
         }
 
-        public abstract bool esEnCurso();
+        private void finalizar(DateTime fecha, Llamada actual)
+        {
+            throw new NotImplementedException();
+        }
 
+        private Estado crearProximoEstado()
+        {
+            throw new NotImplementedException();
+        }
 
-        public abstract bool esFinalizada();
+        private EnCurso procesar(DateTime fecha, Llamada actual)
+        {
+            throw new NotImplementedException();
+        }
+
         
     }
 }

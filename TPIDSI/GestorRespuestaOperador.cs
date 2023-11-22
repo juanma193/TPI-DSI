@@ -136,18 +136,6 @@ namespace TPIDSI
 
         }
 
-        private Estado buscarEstadoFinalizada()
-        {
-            foreach (Estado e in estados)
-            {
-                if (e.esFinalizada())
-                {
-                    return e;
-                }
-            }
-            return null;
-        }
-
         private double calcularDuracion(DateTime dateTime, DateTime fechaHoraInicio)
         {
             TimeSpan ts = dateTime - fechaHoraInicio;
@@ -179,16 +167,5 @@ namespace TPIDSI
             return actualLlamada.procesar(dateTime);
         }
 
-        private static Estado buscarEstadoEnCurso()
-        {
-            foreach (Estado e in estados)
-            {
-                if (e.esEnCurso())
-                {
-                    return e;
-                }
-            }
-            return null;
-        }
     }
 }

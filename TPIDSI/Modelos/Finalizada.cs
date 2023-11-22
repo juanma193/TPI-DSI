@@ -8,13 +8,5 @@ namespace TPIDSI.Modelos
 {
     public class Finalizada : Estado
     {
-        public override bool esEnCurso()
-        {
-            return false;
-        }
-        public override bool esFinalizada()
-        {
-            return true;
-        }
     }
 }

@@ -8,10 +8,6 @@ namespace TPIDSI.Modelos
 {
     public class EnCurso : Estado
     {
-        public override bool esEnCurso()
-        {
-            return true;
-        }
 
         public void finalizar(Llamada llamada, DateTime fecha)
         {
@@ -22,14 +18,6 @@ namespace TPIDSI.Modelos
         private Finalizada crearProximoEstado()
         {
             return new Finalizada();
-        }
-
-
-
-
-        public override bool esFinalizada()
-        {
-            return false;
         }
     }
 }
