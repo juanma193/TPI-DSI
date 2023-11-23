@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TPIDSI.Modelos;
-using static TPIDSI.BaseDeDatos;
 
 namespace TPIDSI
 {
@@ -24,7 +23,7 @@ namespace TPIDSI
         private static List<string> descripcionOpciones { get; set; }
         private static int indiceValidacion = 0;
         private static bool validacionesCorrectas = true;
-        private static List<Accion> acciones = listaAcciones;
+        private static List<Accion> acciones = BaseDeDatos.getAcciones();
         private static string descripcionOperador { get; set; }
         private static EnCurso estadoEnCurso { get; set; } = null;
 

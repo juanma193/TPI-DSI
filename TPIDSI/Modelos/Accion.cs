@@ -8,11 +8,12 @@ namespace TPIDSI.Modelos
 {
     public class Accion
     {
-        string descripcion { get; set; }
+        public string descripcion { get; set; }
         public Accion(string descripcion)
         {
             this.descripcion = descripcion;
         }
+        public Accion() { }
 
         internal string getDescripcion()
         {
