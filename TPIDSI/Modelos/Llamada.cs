@@ -15,8 +15,8 @@ namespace TPIDSI.Modelos
         string observacionAuditor { get; set; }
         Cliente cliente { get; set; }
         Accion accionRequerida { get; set; }
-        OpcionLlamada opcionSeleccionada { get; set; }
-        SubOpcionLlamada subOpcionSeleccionada { get; set; }
+        public OpcionLlamada opcionSeleccionada { get; set; }
+        public SubOpcionLlamada subOpcionSeleccionada { get; set; }
         public List<CambioEstado> cambiosEstados { get; set; }
         Iniciada estadoIniciada = new Iniciada(); 
 

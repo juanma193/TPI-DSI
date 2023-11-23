@@ -10,11 +10,13 @@ namespace TPIDSI.Modelos
     {
         private bool correcta { get; set; }
         private string descripcion { get; set; }
+        public int idValidacion { get; set; }
 
-        public OpcionValidacion(string descripcion, bool correcta)
+        public OpcionValidacion(string descripcion, bool correcta, int id)
         {
             this.descripcion = descripcion;
             this.correcta = correcta;
+            this.idValidacion = id;
         }
 
         internal string getDescripcion()

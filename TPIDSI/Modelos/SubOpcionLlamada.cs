@@ -24,5 +24,9 @@ namespace TPIDSI.Modelos
         {
             return nombre;
         }
+        internal void AddValidacion(Validacion val)
+        {
+            validacionRequerida.Add(val);
+        }
     }
 }

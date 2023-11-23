@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using TPIDSI.Modelos;
 using System.Data.SQLite;
 using System.Configuration;
-
+using System.Data.Entity.Core.Common.CommandTrees;
 
 namespace TPIDSI
 {
@@ -118,6 +118,239 @@ namespace TPIDSI
             return oLista;
         }
 
-        
+        public static List<OpcionValidacion> getOpcionesValidacion()
+        {
+            List<OpcionValidacion> oLista = new List<OpcionValidacion>();
+
+            using (SQLiteConnection con = new SQLiteConnection(cadena))
+            {
+                con.Open();
+                string query = "select * from OpcionValidacion";
+                SQLiteCommand cmd = new SQLiteCommand(query, con);
+                cmd.CommandType = System.Data.CommandType.Text;
+
+
+                using (SQLiteDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        oLista.Add(new OpcionValidacion(
+                            reader["descripcion"].ToString(),
+                            bool.Parse(reader["correcta"].ToString()),
+                            int.Parse(reader["idValidacion"].ToString())
+                            ));
+                    }
+                }
+            }
+
+            return oLista;
+        }
+
+        public static List<Validacion> getListaValidaciones()
+        {
+            List<Validacion> oLista = new List<Validacion>();
+
+            using (SQLiteConnection con = new SQLiteConnection(cadena))
+            {
+                con.Open();
+                string query = "select * from Validacion";
+                SQLiteCommand cmd = new SQLiteCommand(query, con);
+                cmd.CommandType = System.Data.CommandType.Text;
+
+
+                using (SQLiteDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        oLista.Add(new Validacion(
+                            int.Parse(reader["idValidacion"].ToString()),
+                            reader["audioMensajeValidacion"].ToString(),
+                            reader["nombreValidacion"].ToString(),
+                            int.Parse(reader["nroOrden"].ToString()),
+                            new List<OpcionValidacion>()
+                            )
+                        );
+                    }
+                }
+            }
+            var opciones = getOpcionesValidacion();
+
+            foreach (var validacion in oLista)
+            {
+                foreach (var opcion in opciones)
+                {
+                    if (opcion.idValidacion == validacion.idValidacion)
+                    {
+                        validacion.AddOpcionValidacion(opcion);
+                    }
+                }
+            }
+
+            return oLista;
+        }
+
+        public static List<SubOpcionLlamada> getSubOpcionesLlamada()
+        {
+            List<SubOpcionLlamada> oLista = new List<SubOpcionLlamada>();
+
+            using (SQLiteConnection con = new SQLiteConnection(cadena))
+            {
+                con.Open();
+                string query = "select *  from SubOpcionLlamada";
+                SQLiteCommand cmd = new SQLiteCommand(query, con);
+                cmd.CommandType = System.Data.CommandType.Text;
+
+
+                using (SQLiteDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        oLista.Add(new SubOpcionLlamada(
+                            reader["nombre"].ToString(),
+                            int.Parse(reader["nroOrden"].ToString()),
+                            new List<Validacion>()
+                            ));
+                    }
+                }
+            }
+            var validaciones = getListaValidaciones();
+            foreach (var subOpcion in oLista)
+            {
+                foreach (var validacion in validaciones)
+                {
+                    subOpcion.AddValidacion(validacion);
+                }
+            }
+
+            return oLista;
+        }
+
+        public static CategoriaLlamada getCategoriaLlamada()
+        {
+            CategoriaLlamada categoria = null;
+
+            using (SQLiteConnection con = new SQLiteConnection(cadena))
+            {
+                con.Open();
+                string query = "select * from CategoriaLlamada";
+                SQLiteCommand cmd = new SQLiteCommand(query, con);
+                cmd.CommandType = System.Data.CommandType.Text;
+
+
+                using (SQLiteDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        categoria = new CategoriaLlamada(
+                            reader["audioMensajeOpciones"].ToString(),
+                            reader["mensajeOpciones"].ToString(),
+                            reader["nombre"].ToString(),
+                            int.Parse(reader["nroOrden"].ToString()),
+                            new List<OpcionLlamada>()
+                            );
+
+
+                    }
+                }
+            }
+
+            return categoria;
+        }
+
+        public static OpcionLlamada getOpcionLlamada()
+        {
+            OpcionLlamada opcionLlamada = null;
+
+            using (SQLiteConnection con = new SQLiteConnection(cadena))
+            {
+                con.Open();
+                string query = "select * from opcionLlamada";
+                SQLiteCommand cmd = new SQLiteCommand(query, con);
+                cmd.CommandType = System.Data.CommandType.Text;
+
+
+                using (SQLiteDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        opcionLlamada = new OpcionLlamada(
+                            reader["audioMensajeOpciones"].ToString(),
+                            reader["mensajeOpciones"].ToString(),
+                            reader["nombreOpcion"].ToString(),
+                            int.Parse(reader["nroOrden"].ToString()),
+                            new List<Validacion>(),
+                            new List<SubOpcionLlamada>()
+                            );
+
+
+                    }
+                }
+            }
+            opcionLlamada.subOpcionLlamada = getSubOpcionesLlamada();
+            opcionLlamada.validacionesRequeridas = getListaValidaciones();
+            return opcionLlamada;
+        }
+
+        public static Llamada getLlamadaIniciada()
+        {
+            Llamada llamada = null;
+            Accion accion = null;
+            Cliente cliente = null;
+            OpcionLlamada opcion = null;
+            SubOpcionLlamada subOpcion = null;
+            List<SubOpcionLlamada> subOpciones = null;
+            List<Validacion> validaciones = null;
+            List<CambioEstado> cambios = new List<CambioEstado>();
+
+            using (SQLiteConnection con = new SQLiteConnection(cadena))
+            {
+                con.Open();
+                string query = "select l.*,cl.*,a.*,ol.*,v.*,sl.* from Llamada l " +
+                    "join CambioEstado c on l.idLlamada = c.idLlamada " +
+                    "join Estado e on c.idEstado = e.idEstado " +
+                    "JOIN Cliente cl on cl.idCliente = l.idCliente " +
+                    "JOIN Accion a on a.idAccion = l.idAccion " +
+                    "JOIN OpcionLlamada ol on ol.idOpcionLlamada = l.idOpcionLlamada " +
+                    "JOIN Validacion v on v.idOpcionLlamada = ol.idOpcionLlamada " +
+                    "JOIN SubOpcionLlamada sl on sl.idSubOpcionLlamada = l.idSubOpcion " +
+                    "WHERE e.nombre = 'Iniciada'";
+                SQLiteCommand cmd = new SQLiteCommand(query, con);
+                cmd.CommandType = System.Data.CommandType.Text;
+
+
+                using (SQLiteDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        accion = new Accion()
+                        {
+                            descripcion = reader["descripcion"].ToString(),
+                        };
+
+                        cliente = new Cliente(
+                            long.Parse(reader["dni"].ToString()),
+                            reader["nombre"].ToString(),
+                            long.Parse(reader["nroCelular"].ToString()),
+                            new List<InformacionCliente>()
+                        );
+
+                        llamada = new Llamada(
+                            reader["descripcionOperador"].ToString(),
+                            reader["detalleAccionRequerida"].ToString(),
+                            double.Parse(reader["duracion"].ToString()),
+                            bool.Parse(reader["encuestaEnviada"].ToString()),
+                            reader["observacionAuditor"].ToString(),
+                            cliente, accion, opcion, subOpcion, cambios
+                            );
+
+                    }
+                
+                }
+            }
+            llamada.opcionSeleccionada = getOpcionLlamada();
+            llamada.subOpcionSeleccionada = BaseDeDatos.getSubOpcionesLlamada().First();
+
+            return llamada;
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace TPIDSI
         private void PantallaRespuestaOperador_Load(object sender, EventArgs e)
         {
             this.Hide();
-            gestor.seleccionComunicarseConOperador(llamadaIniciada, categoriaLlamada, opcionLlamada, subOpcion1, this);
+            gestor.seleccionComunicarseConOperador(BaseDeDatos.getLlamadaIniciada(), BaseDeDatos.getCategoriaLlamada(), BaseDeDatos.getOpcionLlamada(), BaseDeDatos.getSubOpcionesLlamada().First(), this);
         }
 
         internal void habilitarPantalla()

@@ -8,12 +8,15 @@ namespace TPIDSI.Modelos
 {
     public class Validacion
     {
+        public int idValidacion { get; set; }
         string audioMensajeValidacion { get;set; }
         string nombre { get; set; }
         int nroOrden { get; set; }
+
         List<OpcionValidacion> opcionesValidacion { get; set; }
-        public Validacion(string audio, string nombre, int nroOrden, List<OpcionValidacion> opcionesValidacion)
+        public Validacion(int id,string audio, string nombre, int nroOrden, List<OpcionValidacion> opcionesValidacion)
         {
+            this.idValidacion = id;
             this.audioMensajeValidacion = audio;
             this.nombre = nombre;
             this.nroOrden = nroOrden;
@@ -42,6 +45,11 @@ namespace TPIDSI.Modelos
                 }
             }
             return false;
+        }
+
+        internal void AddOpcionValidacion(OpcionValidacion opc)
+        {
+            opcionesValidacion.Add(opc);
         }
     }
 }
